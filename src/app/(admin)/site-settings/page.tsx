@@ -16,14 +16,14 @@ export default function SiteSettingsPage() {
   const heroFileRef = useRef<HTMLInputElement>(null)
   const newHostFileRef = useRef<HTMLInputElement>(null)
 
-async function load() {
+  async function load() {
     try {
       const [hostsRes, settingsRes] = await Promise.all([
         fetch('/api/hosts').then(r => r.ok ? r.json() : []),
         fetch('/api/settings').then(r => r.ok ? r.json() : {}),
       ])
       setHosts(Array.isArray(hostsRes) ? hostsRes : [])
-      const s = settingsRes as Record<string, string>
+      const s = settingsRes as any
       setSettings({
         hero_title: s.hero_title || '',
         hero_subtitle: s.hero_subtitle || '',
