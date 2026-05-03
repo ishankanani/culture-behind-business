@@ -16,23 +16,23 @@ export default function SiteSettingsPage() {
   const heroFileRef = useRef<HTMLInputElement>(null)
   const newHostFileRef = useRef<HTMLInputElement>(null)
 
-  async function load() {
+async function load() {
     try {
       const [hostsRes, settingsRes] = await Promise.all([
         fetch('/api/hosts').then(r => r.ok ? r.json() : []),
         fetch('/api/settings').then(r => r.ok ? r.json() : {}),
       ])
       setHosts(Array.isArray(hostsRes) ? hostsRes : [])
+      const s = settingsRes as Record<string, string>
       setSettings({
-        hero_title: settingsRes.hero_title || '',
-        hero_subtitle: settingsRes.hero_subtitle || '',
-        hero_image: settingsRes.hero_image || '/both.jpeg',
+        hero_title: s.hero_title || '',
+        hero_subtitle: s.hero_subtitle || '',
+        hero_image: s.hero_image || '/both.jpeg',
       })
     } catch (err) {
       console.error('Load error:', err)
     }
   }
-
   useEffect(() => { load() }, [])
 
   async function uploadImage(file: File): Promise<string> {
