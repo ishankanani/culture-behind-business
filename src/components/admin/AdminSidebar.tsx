@@ -39,15 +39,15 @@ export default function AdminSidebar() {
 
   return (
     <aside className="w-52 bg-[#04342C] flex flex-col min-h-screen flex-shrink-0">
-      <div className="p-4 border-b border-white/10">
-        <div className="flex items-center gap-2 mb-1">
-          <div className="w-6 h-6 rounded-md bg-[#0F6E56] flex items-center justify-center">
-            <div className="w-2 h-2 rounded-full bg-[#9FE1CB]"/>
-          </div>
-          <span className="text-white text-xs font-medium">Admin Panel</span>
-        </div>
-        <p className="text-white/40 text-[10px]">The Culture Behind Business</p>
-      </div>
+<div className="p-4 border-b border-white/10">
+  <div className="flex items-center gap-2 mb-1">
+    <div className="w-7 h-7 rounded-full overflow-hidden bg-white flex-shrink-0">
+      <img src="/logo.png" alt="CbB Logo" className="w-full h-full object-contain" />
+    </div>
+    <span className="text-white text-xs font-medium">Admin Panel</span>
+  </div>
+  <p className="text-white/40 text-[10px]">The Culture Behind Business</p>
+</div>
 
       <nav className="p-2 flex-1">
         {nav.map(item => (

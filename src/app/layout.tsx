@@ -5,7 +5,15 @@ export const metadata: Metadata = {
   title: { default: 'The Culture Behind Business', template: '%s | The Culture Behind Business' },
   description: 'Deep conversations about culture, leadership, and the people who build companies that matter.',
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
-  openGraph: { siteName: 'The Culture Behind Business', type: 'website' },
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
+  },
+  openGraph: {
+    siteName: 'The Culture Behind Business',
+    type: 'website',
+    images: [{ url: '/logo.png' }],
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

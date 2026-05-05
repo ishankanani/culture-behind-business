@@ -36,12 +36,12 @@ export default function LoginPage() {
     <div className="min-h-screen bg-[#04342C] flex items-center justify-center px-4">
       <div className="bg-white rounded-2xl p-8 w-full max-w-sm shadow-xl">
         <div className="text-center mb-8">
-          <div className="w-12 h-12 rounded-xl bg-[#04342C] flex items-center justify-center mx-auto mb-4">
-            <div className="w-4 h-4 rounded-full bg-[#1D9E75]" />
-          </div>
-          <h1 className="text-xl font-semibold text-stone-900">Admin login</h1>
-          <p className="text-stone-400 text-sm mt-1">The Culture Behind Business</p>
-        </div>
+  <div className="w-16 h-16 rounded-full overflow-hidden bg-white mx-auto mb-4 flex items-center justify-center">
+    <img src="/logo.png" alt="CbB Logo" className="w-full h-full object-contain" />
+  </div>
+  <h1 className="text-xl font-semibold text-stone-900">Admin login</h1>
+  <p className="text-stone-400 text-sm mt-1">The Culture Behind Business</p>
+</div>
 
         <form onSubmit={submit} className="space-y-4">
           <div>
