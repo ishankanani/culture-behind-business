@@ -25,9 +25,10 @@ export default async function HomePage() {
     getSettings(),
   ])
 
-  const heroImage = settings.hero_image || '/both.jpeg'
-  const heroTitle = settings.hero_title || 'Your destination for the best in business storytelling'
-  const heroSubtitle = settings.hero_subtitle || 'Deep conversations about culture, leadership, and the people who build companies that matter.'
+  const s = settings as Record<string, string>
+  const heroImage = s.hero_image || '/both.jpeg'
+  const heroTitle = s.hero_title || 'Your destination for the best in business storytelling'
+  const heroSubtitle = s.hero_subtitle || 'Deep conversations about culture, leadership, and the people who build companies that matter.'
 
   return (
     <div>
